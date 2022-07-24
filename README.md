@@ -54,7 +54,7 @@ const cookie1 = {
         httpOnly: true,
         sameSite: 'lax'
     };
-validCookie: isvalid('https://www.example.com/site', cookie1) //满足， 返回
+validCookie.isvalid('https://www.example.com/site', cookie1) //满足， 返回
 /*
 {
     "cookie": "foo=bar",
@@ -62,7 +62,7 @@ validCookie: isvalid('https://www.example.com/site', cookie1) //满足， 返回
 }
 */
 
-validCookie: isvalid('https://www.example.com/site', cookie2) //不满足， 返回false
-validCookie: isvalid('https://www.example.com/site', cookie3) //不满足， 返回false
-validCookie: isvalid('https://www.example.com/site', cookie4) //不满足， 返回false
+validCookie.isvalid('https://www.example.com/site', cookie2) //不满足， 返回false
+validCookie.isvalid('https://www.example.com/site', cookie3) //不满足， 返回false
+validCookie.isvalid('https://www.example.com/site', cookie4) //不满足， 返回false
 ```
