@@ -32,3 +32,6 @@ function isvalid(url, cookie) {
         "set-cookie": libCookie.serialize(cookie.name, cookie.value, cookie)
     }
 }
+
+module.exports = isvalid;
+module.exports.isvalid = isvalid;
