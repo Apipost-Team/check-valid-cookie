@@ -1,5 +1,5 @@
 # 🚀 is-valid-cookie
-Verify whether a cookie is available for a URL
+Verify whether a cookie is available for a URL. This library has used by apipost team.
 
 ## Install
 
