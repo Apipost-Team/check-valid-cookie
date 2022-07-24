@@ -18,7 +18,7 @@ function isvalid(url, cookie) {
 
     // expire
     let expires = new Date(cookie.expires);
-    if (_.isDate(expires) && String(new Date("a111")) != "Invalid Date" && _.lt(expires, new Date())) {
+    if (_.isDate(expires) && String(expires) != "Invalid Date" && _.lt(expires, new Date())) {
         return false;
     }
 
