@@ -1,15 +1,15 @@
-# 🚀 is-valid-cookie
+# 🚀 check-valid-cookie
 Verify whether a cookie is available for a URL. 
 ## Install
 
 ```
-$ npm install is-valid-cookie
+$ npm install check-valid-cookie
 ```
 
 ##  Usage
 
 ```javascript
-const validCookie = require('is-valid-cookie');
+const validCookie = require('check-valid-cookie');
 const cookie1 = {
         name: 'foo',
         value: 'bar',
