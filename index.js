@@ -17,11 +17,13 @@ function isvalid(url, cookie) {
     }
 
     // expire
-    let expires = new Date(cookie.expires);
-    if (_.isDate(expires) && String(expires) != "Invalid Date" && _.lt(expires, new Date())) {
-        return false;
+    if(cookie.expires){
+        let expires = new Date(cookie.expires);
+        if (_.isDate(expires) && String(expires) != "Invalid Date" && _.lt(expires, new Date())) {
+            return false;
+        }
     }
-
+    
     // secure
     if (cookie.secure && _uri.protocol != 'https:') {
         return false;
@@ -29,7 +31,7 @@ function isvalid(url, cookie) {
 
     return {
         "cookie": libCookie.serialize(cookie.name, cookie.value),
-        "set-cookie": libCookie.serialize(cookie.name, cookie.value, cookie)
+        // "set-cookie": libCookie.serialize(cookie.name, cookie.value, cookie)
     }
 }
 
