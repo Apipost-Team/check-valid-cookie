@@ -6,7 +6,12 @@ function isvalid(url, cookie) {
     const _uri = new libUrl(url);
 
     // domain
-    if (_.trim(cookie.domain) && !_.endsWith(_uri.hostname, _.trim(cookie.domain))) {
+    let _cookieDomain = cookie.domain;
+
+    if (_.isString(_cookieDomain)) {
+        _cookieDomain = _cookieDomain.split(':')[0];
+    }
+    if (_.trim(_cookieDomain) && !_.endsWith(_uri.hostname, _.trim(_cookieDomain))) {
         return false;
     }
 
@@ -17,22 +22,22 @@ function isvalid(url, cookie) {
     }
 
     // expire
-    if(cookie.expires){
-        let expires = new Date(cookie.expires);
-        if (_.isDate(expires) && String(expires) != "Invalid Date" && _.lt(expires, new Date())) {
+    if (cookie.expires) {
+        const expires = new Date(cookie.expires);
+        if (_.isDate(expires) && String(expires) != 'Invalid Date' && _.lt(expires, new Date())) {
             return false;
         }
     }
-    
+
     // secure
     if (cookie.secure && _uri.protocol != 'https:') {
         return false;
     }
 
     return {
-        "cookie": libCookie.serialize(cookie.name, cookie.value),
+        cookie: libCookie.serialize(cookie.name, cookie.value),
         // "set-cookie": libCookie.serialize(cookie.name, cookie.value, cookie)
-    }
+    };
 }
 
 module.exports = isvalid;
