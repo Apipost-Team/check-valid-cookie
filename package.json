@@ -1,6 +1,6 @@
 {
   "name": "check-valid-cookie",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Verify whether a cookie is available for a URL.",
   "main": "index.js",
   "scripts": {
