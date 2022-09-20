@@ -35,7 +35,10 @@ function isvalid(url, cookie) {
     }
 
     return {
-        cookie: libCookie.serialize(cookie.name, cookie.value)
+        cookie: libCookie.serialize(cookie.name, cookie.value, {
+            encode: encodeURI,
+        }),
+        //         cookie: libCookie.serialize(cookie.name, cookie.value)
     };
 }
 
